@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "hscore",
+  "version": "${version}",
+  "name": "HSCore",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/hscore/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.gnahiak2.hscore.client.HscoreDataGenerator"
+    ],
+    "main": [
+      "org.gnahiak2.hscore.Hscore"
+    ]
+  },
+  "mixins": [
+    "hscore.mixins.json",
+    {
+      "config": "hscore.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
